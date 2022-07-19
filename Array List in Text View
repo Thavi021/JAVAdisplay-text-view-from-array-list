@@ -1,0 +1,30 @@
+public class MainActivity extends Activity {
+
+    Button aButton; // Global Scope
+    TextView text2;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.new_layout); 
+
+        aButton = (Button) this.findViewById(R.id.button1);
+        aButton.setOnClickListener(new OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                ArrayList<String> list = new ArrayList<String>();
+
+                list.add("Books");
+                list.add("Newspapers");
+                list.add("Magazines");
+
+                for (int i = 0; i < list.size(); i++) {
+                    //System.out.println(list.get(i));
+
+                    Log.i("Results", list.get(i));
+                    text2.setText(text2.getText());
+                }
+            }
+        });
+    }
